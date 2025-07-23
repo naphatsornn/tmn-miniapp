@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
   const headers = req.headers;
 
   // แสดง header ทั้งหมดในรูปแบบ HTML
-  let html = `<h1>Headers:</h1><ul>`;
+  let html = `<h1>Headers : </h1><ul>`;
   for (const key in headers) {
     html += `<li><strong>${key}</strong>: ${headers[key]}</li>`;
   }
