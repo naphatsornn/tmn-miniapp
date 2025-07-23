@@ -1,11 +1,11 @@
+const express = require('express');
+const app = express();
+
 app.get('/', (req, res) => {
   const headers = req.headers;
-
-  // ✅ Log header ทั้งหมดออกทาง console
   console.log('All headers:', headers);
 
-  // แสดง header ทั้งหมดในรูปแบบ HTML
-  let html = `<h1>Headers : </h1><ul>`;
+  let html = `<h1>Headers :</h1><ul>`;
   for (const key in headers) {
     html += `<li><strong>${key}</strong>: ${headers[key]}</li>`;
   }
@@ -13,3 +13,6 @@ app.get('/', (req, res) => {
 
   res.send(html);
 });
+
+// ❗️ต้องมีบรรทัดนี้เพื่อให้ Vercel ใช้ได้
+module.exports = app;
